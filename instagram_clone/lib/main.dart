@@ -4,7 +4,6 @@ void main() {
   runApp(MyApp());
 }
 
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -43,7 +42,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-  
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
@@ -58,15 +56,11 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: [
           IconButton(
             icon: Icon(Icons.search, color: Colors.white),
-            onPressed: () {
-              // Navigate to search page
-            },
+            onPressed: () {},
           ),
           IconButton(
             icon: Icon(Icons.chat_sharp, color: Colors.white),
-            onPressed: () {
-              // Navigate to notifications page
-            },
+            onPressed: () {},
           ),
         ],
       ),
@@ -76,10 +70,9 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 100,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: stories.length + 1, // Mavi artı için +1
+              itemCount: stories.length + 1,
               itemBuilder: (context, index) {
                 if (index == 0) {
-                  // Profil resmi
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Stack(
@@ -91,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             border: Border.all(
-                              color: Colors.white, // Profil rengi
+                              color: Colors.white,
                               width: 1,
                             ),
                           ),
@@ -155,8 +148,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: <Widget>[
                     ListTile(
                       leading: CircleAvatar(
-                     backgroundImage: NetworkImage('https://a.storyblok.com/f/191576/1200x800/215e59568f/round_profil_picture_after_.webp'),
-                          ),
+                        backgroundImage: NetworkImage(
+                            'https://a.storyblok.com/f/191576/1200x800/215e59568f/round_profil_picture_after_.webp'),
+                      ),
                       title: Text(
                         'zehraozer',
                         style: TextStyle(
@@ -171,7 +165,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       fit: BoxFit.cover,
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(16.0),
+                      padding: const EdgeInsets.all(10.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
@@ -181,35 +175,26 @@ class _MyHomePageState extends State<MyHomePage> {
                               IconButton(
                                 icon: Icon(Icons.favorite_border,
                                     size: 28, color: Colors.white),
-                                onPressed: () {
-                                  Colors.pink;
-                                  print("beğen tıklandı");
-                                },
+                                onPressed: () {},
                               ),
                               SizedBox(width: 8.0),
                               IconButton(
-                                icon: Icon(Icons.comment,
+                                icon: Icon(Icons.comment_outlined,
                                     size: 28, color: Colors.white),
-                                onPressed: () {
-                                  // Navigate to comments page
-                                },
+                                onPressed: () {},
                               ),
                               SizedBox(width: 8.0),
                               IconButton(
-                                icon: Icon(Icons.send,
+                                icon: Icon(Icons.send_outlined,
                                     size: 28, color: Colors.white),
-                                onPressed: () {
-                                  // Handle send button tap
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
                           IconButton(
                             icon: Icon(Icons.bookmark_border,
                                 size: 28, color: Colors.white),
-                            onPressed: () {
-                              // Handle bookmark button tap
-                            },
+                            onPressed: () {},
                           ),
                         ],
                       ),
@@ -226,7 +211,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
                       child: Row(
                         children: <Widget>[
-                          Text('zehraozer: ',
+                          Text('zehraozer ',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold)),
@@ -247,7 +232,6 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.black,
         selectedItemColor: Colors.white,
         unselectedItemColor: Color.fromARGB(255, 220, 213, 213),
-       
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
